@@ -20,7 +20,7 @@ class OperationPlan(models.Model):
     FR-4.3 (permission tiers), FR-4.4 (approval workflow).
     """
 
-    _name = 'aslabot.operation.plan'
+    _name = 'asla_client.mcp.plan'
     _description = 'MCP Operation Plan'
     _inherit = ['mail.thread']
     _order = 'create_date desc'

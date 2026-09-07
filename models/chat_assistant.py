@@ -113,7 +113,7 @@ class DiscussChannel(models.Model):
                         if not ai_reply:
                             ai_reply = "I have all the requirements I need! I am generating your app now..."
                             
-                        project = env['asla.app.project'].create({
+                        project = env['asla_client.rfp.project'].create({
                             'name': f"App Request from Channel {channel.id}",
                             'prompt': conversation,
                         })

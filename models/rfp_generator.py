@@ -8,7 +8,7 @@ from odoo import models, fields, api, exceptions, _
 from odoo.tools import convert_xml_import
 
 class AslaAppProject(models.Model):
-    _name = 'asla.app.project'
+    _name = 'asla_client.rfp.project'
     _description = 'ASLA App Generation Project'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -149,7 +149,7 @@ class AslaAppProject(models.Model):
                 registry = odoo.registry(db_name)
                 with registry.cursor() as cr:
                     env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
-                    project = env['asla.app.project'].browse(project_id)
+                    project = env['asla_client.rfp.project'].browse(project_id)
                     
                     if project.exists():
                         # Aggregate prompt

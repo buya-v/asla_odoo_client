@@ -14,7 +14,7 @@ class AslaBotTicket(models.Model):
     answer comes back via the control endpoint and is posted to this chatter.
     """
 
-    _name = 'asla.bot.ticket'
+    _name = 'asla_client.ticket'
     _description = 'AslaBot Ticket'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'create_date desc'
@@ -58,7 +58,7 @@ class AslaBotTicket(models.Model):
         for vals in vals_list:
             if vals.get('name', _('New')) == _('New'):
                 vals['name'] = self.env['ir.sequence'].next_by_code(
-                    'asla.bot.ticket') or _('New')
+                    'asla_client.ticket') or _('New')
         tickets = super().create(vals_list)
         for ticket in tickets:
             ticket._submit_to_hub()

@@ -22,7 +22,7 @@ class AslaBotOperation(models.Model):
     locally (authoritative) and executes, confirms, or refuses accordingly.
     """
 
-    _name = 'asla.bot.operation'
+    _name = 'asla_client.mcp.operation'
     _description = 'AslaBot Local Operation'
     _inherit = ['mail.thread']
     _order = 'create_date desc'
