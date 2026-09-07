@@ -1,8 +1,18 @@
-{
-    'name': 'ASLA Client Agent (asla_odoo_client)',
+{   'name': 'ASLA Client Agent (asla_odoo_client)',
     'version': '18.0.1.0.0',
     'summary': 'Edge AI Agent for Administration, Support, and RFP Generation',
     'depends': ['base', 'mail'],
-    'data': [],
-    'installable': True,
-}
+    'data': [   'security/asla_bot_groups.xml',
+                'security/ir.model.access.csv',
+                'data/asla_bot_data.xml',
+                'data/asla_studio_bot_data.xml',
+                'data/ir_sequence_data.xml',
+                'views/asla_project_views.xml',
+                'views/bot_operation_views.xml',
+                'views/bot_ticket_views.xml',
+                'views/hub_connection_views.xml',
+                'views/menu.xml',
+                'views/menu_views.xml',
+                'views/operation_log_views.xml',
+                'views/res_config_settings_views.xml'],
+    'installable': True}
