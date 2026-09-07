@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_operation_log_tree" model="ir.ui.view">
+        <field name="name">asla_odoo_client.operation.log.tree</field>
+        <field name="model">asla_odoo_client.operation.log</field>
+        <field name="arch" type="xml">
+            <list string="Operation Logs"
+                  decoration-danger="state == 'failed'"
+                  decoration-success="state == 'success'"
+                  decoration-muted="state == 'pending'">
+                <field name="create_date"/>
+                <field name="ticket_id"/>
+                <field name="client_id"/>
+                <field name="target_model"/>
+                <field name="method"/>
+                <field name="state"/>
+                <field name="execution_duration"/>
+                <field name="executed_by"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_operation_log_form" model="ir.ui.view">
+        <field name="name">asla_odoo_client.operation.log.form</field>
+        <field name="model">asla_odoo_client.operation.log</field>
+        <field name="arch" type="xml">
+            <form string="Operation Log" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ticket_id"/>
+                            <field name="client_id"/>
+                            <field name="plan_id"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="target_model"/>
+                            <field name="method"/>
+                            <field name="execution_duration"/>
+                            <field name="executed_by"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Arguments">
+                            <field name="arguments"/>
+                        </page>
+                        <page string="Result">
+                            <field name="result"/>
+                        </page>
+                        <page string="Error" invisible="state != 'failed'">
+                            <field name="error_message"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_operation_log" model="ir.actions.act_window">
+        <field name="name">Operation Logs</field>
+        <field name="res_model">asla_odoo_client.operation.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asla_app_project_system,asla_client.rfp.project.system,model_asla_app_project,base.group_system,1,1,1,1
+access_asla_app_project_user,asla_client.rfp.project.user,model_asla_app_project,base.group_user,1,1,1,1

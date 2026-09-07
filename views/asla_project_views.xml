@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_asla_app_project_form" model="ir.ui.view">
+        <field name="name">asla_client.rfp.project.form</field>
+        <field name="model">asla_client.rfp.project</field>
+        <field name="arch" type="xml">
+            <form string="AslaBot App Project">
+                <header>
+                    <button string="Force Generate RFP" name="action_export_rfp" type="object" class="btn-primary" invisible="state != 'draft' or operation_mode != 'export_rfp'"/>
+                    <button string="Install Uploaded App" name="action_import_app" type="object" class="btn-success" invisible="operation_mode != 'import_app'"/>
+                    <button string="Undo Last Generation" name="action_undo" type="object" class="btn-danger" invisible="state != 'done'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,ready,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Project Name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Fleet Tracker App"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="operation_mode" readonly="1"/>
+                    </group>
+                    
+                    <group invisible="state == 'draft' or operation_mode != 'export_rfp'">
+                        <field name="rfp_file" filename="rfp_file_name" readonly="1"/>
+                        <field name="rfp_file_name" invisible="1"/>
+                    </group>
+
+                    <group invisible="operation_mode != 'import_app'">
+                        <field name="app_upload_file" filename="app_upload_filename"/>
+                        <field name="app_upload_filename" invisible="1"/>
+                    </group>
+                </sheet>
+                <!-- Native Odoo Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    
+    <record id="view_asla_app_project_tree" model="ir.ui.view">
+        <field name="name">asla_client.rfp.project.list</field>
+        <field name="model">asla_client.rfp.project</field>
+        <field name="arch" type="xml">
+            <list string="AslaBot App Projects">
+                <field name="name"/>
+                <field name="operation_mode"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_asla_studio_project" model="ir.actions.act_window">
+        <field name="name">AslaBot Projects</field>
+        <field name="res_model">asla_client.rfp.project</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

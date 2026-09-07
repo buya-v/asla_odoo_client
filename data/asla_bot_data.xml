@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Make the app visible on install (see hub's grant rationale). Production
+         manages membership via Settings > Users. (4, ...) is idempotent. -->
+    <record id="base.user_admin" model="res.users">
+        <field name="groups_id" eval="[(4, ref('asla_odoo_client.group_asla_bot_admin'))]"/>
+    </record>
+</odoo>

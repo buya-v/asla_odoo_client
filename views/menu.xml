@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root Menu -->
+    <menuitem id="menu_asla_studio_root" name="AslaBot" web_icon="asla_studio,static/description/icon.png" sequence="10"/>
+
+    <!-- Action Menus -->
+    <menuitem id="menu_asla_studio_generate" name="AI Projects" parent="menu_asla_studio_root" action="action_asla_studio_project" sequence="10"/>
+    
+    <!-- Configuration Menu -->
+    <menuitem id="menu_asla_studio_config" name="Configuration" parent="menu_asla_studio_root" sequence="100"/>
+    <menuitem id="menu_asla_studio_settings" name="Settings" parent="menu_asla_studio_config" action="action_asla_studio_config_settings" sequence="10"/>
+</odoo>

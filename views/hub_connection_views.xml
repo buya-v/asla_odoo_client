@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_asla_bot_hub_form" model="ir.ui.view">
+        <field name="name">asla.bot.hub.form</field>
+        <field name="model">asla.bot.hub</field>
+        <field name="arch" type="xml">
+            <form string="Hub Connection">
+                <header>
+                    <button name="action_pair" string="Pair with Hub"
+                            type="object" class="btn-primary"
+                            invisible="state == 'paired'"/>
+                    <button name="action_push_config" string="Push Config"
+                            type="object" invisible="state != 'paired'"/>
+                    <button name="action_heartbeat" string="Heartbeat"
+                            type="object" invisible="state != 'paired'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Connection">
+                            <field name="name"/>
+                            <field name="hub_rpc_url"/>
+                            <field name="client_id" readonly="1"/>
+                            <field name="protocol_version"/>
+                        </group>
+                        <group string="Pairing">
+                            <field name="enrollment_code"
+                                   invisible="state == 'paired'"/>
+                            <field name="last_heartbeat" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_asla_bot_hub_list" model="ir.ui.view">
+        <field name="name">asla.bot.hub.list</field>
+        <field name="model">asla.bot.hub</field>
+        <field name="arch" type="xml">
+            <list string="Hub Connections">
+                <field name="name"/>
+                <field name="hub_rpc_url"/>
+                <field name="client_id"/>
+                <field name="state"/>
+                <field name="last_heartbeat"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_asla_bot_hub" model="ir.actions.act_window">
+        <field name="name">Hub Connection</field>
+        <field name="res_model">asla.bot.hub</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

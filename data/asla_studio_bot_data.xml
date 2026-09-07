@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="partner_asla_studio_bot" model="res.partner">
+            <field name="name">AslaBot</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="email">aslabot@asla.mn</field>
+            <field name="active" eval="True"/>
+            <field name="tz">Asia/Ulaanbaatar</field>
+        </record>
+
+        <record id="user_asla_studio_bot" model="res.users">
+            <field name="partner_id" ref="partner_asla_studio_bot"/>
+            <field name="login">aslabot</field>
+            <field name="password">aslabot_secret</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

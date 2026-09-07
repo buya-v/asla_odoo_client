@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_asla_bot_root" name="AslaBot Agent" sequence="101"/>
+
+    <menuitem id="menu_asla_bot_tickets" name="Tickets"
+              parent="menu_asla_bot_root" action="action_asla_bot_ticket"
+              sequence="10"/>
+
+    <menuitem id="menu_asla_bot_operations" name="Operations"
+              parent="menu_asla_bot_root" action="action_asla_bot_operation"
+              sequence="20"/>
+
+    <menuitem id="menu_asla_bot_config" name="Configuration"
+              parent="menu_asla_bot_root"
+              groups="asla_odoo_client.group_asla_bot_admin" sequence="90"/>
+
+    <menuitem id="menu_asla_bot_hub" name="Hub Connection"
+              parent="menu_asla_bot_config" action="action_asla_bot_hub"
+              sequence="10"/>
+</odoo>

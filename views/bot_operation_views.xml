@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_asla_bot_operation_form" model="ir.ui.view">
+        <field name="name">asla_client.mcp.operation.form</field>
+        <field name="model">asla_client.mcp.operation</field>
+        <field name="arch" type="xml">
+            <form string="Operation">
+                <header>
+                    <button name="action_approve" string="Approve &amp; Execute"
+                            type="object" class="btn-primary"
+                            invisible="state != 'pending_confirmation'"/>
+                    <button name="action_reject" string="Reject"
+                            type="object" class="btn-danger"
+                            invisible="state != 'pending_confirmation'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Request">
+                            <field name="operation_ref"/>
+                            <field name="ticket_ref"/>
+                            <field name="target_model"/>
+                            <field name="method"/>
+                        </group>
+                        <group string="Policy">
+                            <field name="hub_tier"/>
+                            <field name="local_tier"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Arguments">
+                            <field name="arguments"/>
+                        </page>
+                        <page string="Result">
+                            <field name="result" readonly="1"/>
+                            <field name="error_message" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_asla_bot_operation_list" model="ir.ui.view">
+        <field name="name">asla_client.mcp.operation.list</field>
+        <field name="model">asla_client.mcp.operation</field>
+        <field name="arch" type="xml">
+            <list string="Operations" decoration-danger="state in ('rejected','failed')"
+                  decoration-warning="state == 'pending_confirmation'"
+                  decoration-success="state == 'executed'">
+                <field name="operation_ref"/>
+                <field name="target_model"/>
+                <field name="method"/>
+                <field name="local_tier"/>
+                <field name="state"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_asla_bot_operation" model="ir.actions.act_window">
+        <field name="name">Operations</field>
+        <field name="res_model">asla_client.mcp.operation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
