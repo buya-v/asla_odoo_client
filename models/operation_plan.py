@@ -26,7 +26,7 @@ class OperationPlan(models.Model):
     _order = 'create_date desc'
 
     ticket_id = fields.Many2one(
-        'aslabot.ticket', string='Ticket', required=True, ondelete='cascade')
+        'asla_client.ticket', string='Ticket', required=True, ondelete='cascade')
     client_id = fields.Many2one(
         'aslabot.client.registry', string='Client', required=True)
     connection_id = fields.Many2one(
