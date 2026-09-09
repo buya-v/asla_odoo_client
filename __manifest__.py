@@ -1,17 +1,1 @@
-{   'name': 'ASLA Client Agent (asla_odoo_client)',
-    'version': '18.0.1.0.0',
-    'summary': 'Edge AI Agent for Administration, Support, and RFP Generation',
-    'depends': ['base', 'mail', 'portal', 'website'],
-    'data': [   'security/asla_bot_groups.xml',
-                'security/ir.model.access.csv',
-                'data/asla_bot_data.xml',
-                'data/asla_studio_bot_data.xml',
-                'data/ir_sequence_data.xml',
-                'views/asla_project_views.xml',
-                'views/bot_operation_views.xml',
-                'views/bot_ticket_views.xml',
-                'views/portal_templates.xml',
-                'views/res_config_settings_views.xml',
-                'views/z_menu.xml',
-                'views/z_menu_views.xml'],
-    'installable': True}
+{'name': 'ASLA Client Agent (asla_odoo_client)', 'version': '18.0.1.0.0', 'summary': 'Edge AI Agent for Administration, Support, and RFP Generation', 'depends': ['base', 'mail', 'portal', 'website'], 'data': ['security/asla_bot_groups.xml', 'security/ir.model.access.csv', 'data/asla_bot_data.xml', 'data/asla_studio_bot_data.xml', 'data/ir_sequence_data.xml', 'views/asla_project_views.xml', 'views/bot_operation_views.xml', 'views/bot_ticket_views.xml', 'views/portal_templates.xml', 'views/res_config_settings_views.xml', 'views/z_menu.xml', 'views/z_menu_views.xml'], 'installable': True, 'license': 'LGPL-3'}
