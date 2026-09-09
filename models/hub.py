@@ -1,4 +1,5 @@
 import logging
+import os
 import uuid
 
 import requests
@@ -9,7 +10,12 @@ from odoo.exceptions import UserError
 _logger = logging.getLogger(__name__)
 
 PROTOCOL_VERSION = "1.0"
+# Most hub calls are bookkeeping and answer immediately. chat.answer is not:
+# it reaches a CPU-bound Gemma4 behind the hub, measured at ~100s for a
+# grounded reply. A single 30s timeout made chat structurally impossible while
+# every other method looked fine.
 _TIMEOUT = 30
+_TIMEOUT_LLM = int(os.environ.get("ASLA_HUB_LLM_TIMEOUT", "600"))
 
 
 class AslaBotHub(models.Model):
@@ -61,7 +67,7 @@ class AslaBotHub(models.Model):
             'ts': fields.Datetime.now().isoformat() + 'Z',
         }
 
-    def _intake(self, method, params, token=None):
+    def _intake(self, method, params, token=None, timeout=None):
         """POST a JSON-RPC request to the hub. Returns the result or raises.
 
         Never logs the bearer token.
@@ -79,7 +85,7 @@ class AslaBotHub(models.Model):
             headers['Authorization'] = f'Bearer {bearer}'
         try:
             resp = requests.post(self.hub_rpc_url, json=payload,
-                                 headers=headers, timeout=_TIMEOUT)
+                                 headers=headers, timeout=timeout or _TIMEOUT)
             resp.raise_for_status()
             body = resp.json()
         except requests.RequestException as exc:
@@ -145,7 +151,7 @@ class AslaBotHub(models.Model):
         """
         self.ensure_one()
         return self._intake('chat.answer', {
-            'query': query, 'role': role, 'lang': lang})
+            'query': query, 'role': role, 'lang': lang}, timeout=_TIMEOUT_LLM)
 
     def submit_ticket(self, vals):
         """ticket.submit (spec §5) — called by asla_client.ticket on create."""
