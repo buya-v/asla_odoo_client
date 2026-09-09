@@ -17,6 +17,9 @@
                         <setting string="Operation Mode" help="Set the default operation mode for the AI Project generator.">
                             <field name="asla_operation_mode" widget="radio"/>
                                 <field name="asla_generated_addons_path" placeholder="/opt/odoo/asla_generated"/>
+                                <field name="asla_ai_url"/>
+                                <field name="asla_ollama_url"/>
+                                <field name="asla_ollama_model"/>
                         </setting>
                     </block>
                 </app>
