@@ -1,5 +1,7 @@
 # ASLA Client Agent (`asla_odoo_client`)
 
+[![CI](https://github.com/buya-v/asla_odoo_client/actions/workflows/ci.yml/badge.svg)](https://github.com/buya-v/asla_odoo_client/actions/workflows/ci.yml) [![Licence: LGPL-3.0](https://img.shields.io/badge/licence-LGPL--3.0-blue.svg)](LICENSE) [![Odoo 18](https://img.shields.io/badge/Odoo-18.0-875A7B.svg)](https://www.odoo.com)
+
 A free, open-source Odoo 18 module that puts an AI agent **inside your own Odoo**: it answers your
 team's Odoo questions, takes support tickets, and prepares administration work for a person to
 approve. It runs offline on your own machine, or online through the ASLA Hub when you want a larger
