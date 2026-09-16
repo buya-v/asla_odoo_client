@@ -22,7 +22,7 @@ class AslaAppProject(models.Model):
         ('ready', 'RFP Ready for Download'),
         ('done', 'App Installed')
     ], string="Status", default='draft', tracking=True)
-    
+
     # We get operation_mode from settings default, but let users see it.
     operation_mode = fields.Selection([
         ('online', 'Online API (Auto-Install)'),
@@ -32,10 +32,10 @@ class AslaAppProject(models.Model):
 
     rfp_file = fields.Binary(string="Download RFP ZIP", readonly=True, tracking=True)
     rfp_file_name = fields.Char(string="RFP File Name")
-    
+
     app_upload_file = fields.Binary(string="Upload Generated App ZIP")
     app_upload_filename = fields.Char(string="Upload File Name")
-    
+
     prompt = fields.Text(string="Aggregated Prompt", help="Hidden field capturing the entire chat history for the RFP")
 
     request_mode = fields.Selection([
@@ -241,22 +241,22 @@ class AslaAppProject(models.Model):
             rfp = rec._build_rfp()
             rfp_data = json.dumps(rfp, ensure_ascii=False, indent=4)
             rec.rfp_preview = rfp_data
-            
+
             fd, path = tempfile.mkstemp(suffix='.zip')
             with zipfile.ZipFile(path, 'w') as zf:
                 zf.writestr('rfp.json', rfp_data.encode('utf-8'))
-                
+
             with open(path, 'rb') as f:
                 zip_b64 = base64.b64encode(f.read())
-                
+
             os.remove(path)
-            
+
             rec.write({
                 'rfp_file': zip_b64,
                 'rfp_file_name': 'asla_rfp.zip',
                 'state': 'ready'
             })
-            
+
             rec.message_post(body="The RFP ZIP file has been generated and is ready for download in the attachments/fields above!")
 
     # ------------------------------------------------------------------
@@ -298,8 +298,8 @@ class AslaAppProject(models.Model):
         """Validate the archive, then extract it. Returns the module name."""
         try:
             archive = zipfile.ZipFile(io.BytesIO(zip_bytes))
-        except zipfile.BadZipFile:
-            raise exceptions.UserError(_("The uploaded file is not a valid ZIP archive."))
+        except zipfile.BadZipFile as exc:
+            raise exceptions.UserError(_("The uploaded file is not a valid ZIP archive.")) from exc
 
         infos = [i for i in archive.infolist() if not i.is_dir()]
         if not infos:
@@ -379,7 +379,7 @@ class AslaAppProject(models.Model):
             except Exception as exc:
                 raise exceptions.UserError(
                     _("Odoo refused to %s '%s': %s",
-                      'upgrade' if was_installed else 'install', module_name, exc))
+                      'upgrade' if was_installed else 'install', module_name, exc)) from exc
 
             rec.write({'state': 'done', 'installed_module': module_name})
             rec.message_post(body=_(
@@ -411,22 +411,22 @@ class AslaAppProject(models.Model):
     def message_post(self, **kwargs):
         """Intercept messages to pass to Gemma"""
         message = super(AslaAppProject, self).message_post(**kwargs)
-        
+
         # Avoid recursive loops if the message is from Odoo system (e.g. no author_id or is Gemma)
-        # Assuming the author is a real user. 
+        # Assuming the author is a real user.
         if kwargs.get('author_id') and self.state == 'draft' and kwargs.get('message_type') == 'comment':
             body = kwargs.get('body', '')
             import re
             clean_text = re.sub(r'<[^>]+>', '', body).strip()
-            
+
             if clean_text:
                 self._send_to_gemma_async(self.id, clean_text)
-                
+
         return message
 
     def _send_to_gemma_async(self, project_id, text):
         db_name = self.env.cr.dbname
-        
+
         def _do_ai_call():
             try:
                 import odoo
@@ -434,13 +434,13 @@ class AslaAppProject(models.Model):
                 with registry.cursor() as cr:
                     env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
                     project = env['asla_client.rfp.project'].browse(project_id)
-                    
+
                     if project.exists():
                         # Aggregate prompt
                         current_prompt = project.prompt or project.name
                         updated_prompt = current_prompt + "\nUser: " + text
                         project.prompt = updated_prompt
-                        
+
                         system_prompt = (
                             "You are an Odoo Business Analyst. The user wants to build an Odoo app. "
                             "Ask clarifying questions about their database requirements. "
@@ -448,42 +448,42 @@ class AslaAppProject(models.Model):
                             "When you have enough information to build a basic data model, you MUST reply with the exact word [READY]. "
                             "Do not output [READY] until you understand the basic entities needed."
                         )
-                        
+
                         api_messages = [
                             {"role": "system", "content": system_prompt},
                             {"role": "user", "content": f"Conversation so far:\n{updated_prompt}"}
                         ]
-                        
+
                         payload = json.dumps({
                             "model": "gemma4:e2b",
                             "messages": api_messages,
                             "stream": False
                         }).encode('utf-8')
-                        
+
                         try:
                             req = urllib.request.Request("http://host.docker.internal:11434/api/chat", data=payload, headers={'Content-Type': 'application/json'})
                             with urllib.request.urlopen(req, timeout=300) as resp:
                                 result = json.loads(resp.read().decode())
                                 ai_reply = result.get('message', {}).get('content', '')
-                        except Exception as e:
+                        except Exception:
                             ai_reply = "I am having trouble connecting to Ollama."
-                            
+
                         # Update prompt with Gemma's reply
                         project.prompt = updated_prompt + f"\nGemma: {ai_reply}"
-                        
+
                         # Post response to chatter
                         project.with_context(mail_create_nosubscribe=True).message_post(
                             body=ai_reply,
                             message_type='comment',
                             subtype_xmlid='mail.mt_comment',
                         )
-                        
+
                         # If Gemma is ready, automatically trigger RFP generation!
                         if "[READY]" in ai_reply:
                             project.action_export_rfp()
-                            
-            except Exception as e:
+
+            except Exception:
                 pass
-                
+
         thread = threading.Thread(target=_do_ai_call, daemon=True)
         thread.start()

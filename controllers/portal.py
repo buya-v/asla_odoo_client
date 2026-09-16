@@ -1,8 +1,7 @@
-from odoo import http, _
+from odoo import http
 from odoo.http import request
 import zipfile
 import tempfile
-import json
 import os
 
 class AslaAiPortal(http.Controller):
