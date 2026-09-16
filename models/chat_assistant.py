@@ -3,7 +3,7 @@
 
 Two bugs made the bot mute. It looked up
 `asla_studio.partner_asla_studio_bot`, but the data moved to this module, so
-the xmlid is `asla_odoo_client.partner_asla_studio_bot` -- and with
+the xmlid is `asla_odoo_client.partner_aslabot` -- and with
 `raise_if_not_found=False` the lookup returned None and the hook returned
 early, silently, with nothing in the log. The reply worker had the same stale
 ref. Both are fixed, and the module prefix is now derived rather than spelled
@@ -23,7 +23,7 @@ from odoo import models
 
 _logger = logging.getLogger(__name__)
 
-BOT_XMLID = 'asla_odoo_client.partner_asla_studio_bot'
+BOT_XMLID = 'asla_odoo_client.partner_aslabot'
 HISTORY_LIMIT = 10
 
 

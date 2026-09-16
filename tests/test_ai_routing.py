@@ -15,7 +15,7 @@ class TestAiRouting(TransactionCase):
         self.params = self.env['ir.config_parameter'].sudo()
 
     def _mode(self, mode):
-        self.params.set_param('asla_studio.operation_mode', mode)
+        self.params.set_param('asla_client.operation_mode', mode)
 
     def test_offline_asks_the_local_service_and_is_grounded(self):
         self._mode('export_rfp')

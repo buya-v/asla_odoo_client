@@ -3,8 +3,8 @@ from odoo import models, fields
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    asla_api_key = fields.Char(string='ASLA AI API Key', config_parameter='asla_studio.api_key')
-    asla_api_url = fields.Char(string='ASLA AI Server URL', config_parameter='asla_studio.api_url', default='https://odoo.asla.mn/api/v1/generate_odoo_app')
+    asla_api_key = fields.Char(string='ASLA AI API Key', config_parameter='asla_client.api_key')
+    asla_api_url = fields.Char(string='ASLA AI Server URL', config_parameter='asla_client.api_url', default='https://odoo.asla.mn/api/v1/generate_odoo_app')
 
     # Where a generated module is written before it is installed. Must be on
     # this server's --addons-path, or Odoo will never see the module.
@@ -34,4 +34,4 @@ class ResConfigSettings(models.TransientModel):
         ('online', 'Online API (Auto-Install)'),
         ('export_rfp', 'Offline Mode: Export RFP (ZIP)'),
         ('import_app', 'Offline Mode: Import Generated App (ZIP)')
-    ], string="Operation Mode", default='export_rfp', config_parameter='asla_studio.operation_mode')
+    ], string="Operation Mode", default='export_rfp', config_parameter='asla_client.operation_mode')

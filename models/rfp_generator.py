@@ -28,7 +28,7 @@ class AslaAppProject(models.Model):
         ('online', 'Online API (Auto-Install)'),
         ('export_rfp', 'Offline Mode: Export RFP (ZIP)'),
         ('import_app', 'Offline Mode: Import Generated App (ZIP)')
-    ], string="Operation Mode", required=True, default=lambda self: self.env['ir.config_parameter'].sudo().get_param('asla_studio.operation_mode', 'export_rfp'))
+    ], string="Operation Mode", required=True, default=lambda self: self.env['ir.config_parameter'].sudo().get_param('asla_client.operation_mode', 'export_rfp'))
 
     rfp_file = fields.Binary(string="Download RFP ZIP", readonly=True, tracking=True)
     rfp_file_name = fields.Char(string="RFP File Name")

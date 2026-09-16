@@ -68,6 +68,9 @@ hub and check the first request with you. Write to us at <https://odoo.asla.mn/c
 - Sending a module request from your Odoo to the hub.
 - Requesting a module fully offline, by exporting a file and importing the result (today's upload is
   a placeholder).
+- `asla_client.mcp.plan`'s own dry-run and execute buttons: the permission tiering on that model is
+  real and reused, but there is no MCP call behind those two actions, so they refuse rather than
+  report a success. The model that validates and executes is `asla_client.mcp.operation`.
 
 ## Support
 

@@ -54,7 +54,7 @@
         </field>
     </record>
 
-    <record id="action_asla_studio_project" model="ir.actions.act_window">
+    <record id="action_aslabot_project" model="ir.actions.act_window">
         <field name="name">AslaBot Projects</field>
         <field name="res_model">asla_client.rfp.project</field>
         <field name="view_mode">list,form</field>

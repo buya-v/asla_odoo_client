@@ -31,7 +31,7 @@ _logger = logging.getLogger(__name__)
 P_AI_URL = 'asla_client.ai_url'
 P_OLLAMA_URL = 'asla_client.ollama_url'
 P_OLLAMA_MODEL = 'asla_client.ollama_model'
-P_MODE = 'asla_studio.operation_mode'
+P_MODE = 'asla_client.operation_mode'
 
 DEFAULT_AI_URL = 'http://localhost:8080'
 # Not host.docker.internal: that resolves on Docker Desktop and nowhere else,
@@ -55,7 +55,23 @@ class AslaAi(models.AbstractModel):
 
     @api.model
     def _param(self, key, default):
-        return self.env['ir.config_parameter'].sudo().get_param(key, default)
+        """A setting, read from the current key and then from the retired one.
+
+        The `asla_studio.*` keys were renamed to `asla_client.*` in 18.0.1.2.0.
+        The migration copies them, but an instance whose settings were written
+        by an older version -- or restored from an older backup -- would
+        otherwise silently fall back to the default, and for the operation mode
+        the default is what decides whether anything leaves the network.
+        """
+        params = self.env['ir.config_parameter'].sudo()
+        value = params.get_param(key)
+        if value:
+            return value
+        if key.startswith('asla_client.'):
+            legacy = params.get_param(key.replace('asla_client.', 'asla_studio.', 1))
+            if legacy:
+                return legacy
+        return default
 
     @api.model
     def mode(self):
