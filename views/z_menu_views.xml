@@ -14,7 +14,6 @@
               parent="menu_asla_bot_root"
               groups="asla_odoo_client.group_asla_bot_admin" sequence="90"/>
 
-    <menuitem id="menu_asla_bot_hub" name="Hub Connection"
               parent="menu_asla_bot_config" action="action_asla_bot_hub"
               sequence="10"/>
 </odoo>

@@ -35,7 +35,7 @@ class AslaBotRpc(http.Controller):
         method = req.get('method')
         params = req.get('params') or {}
 
-        hub = request.env['asla.bot.hub'].sudo().search([('state', '=', 'paired')], limit=1)
+        hub = request.env['asla_client.hub'].sudo().search([('state', '=', 'paired')], limit=1)
         auth_err = self._authenticate(hub, params)
         if auth_err:
             return self._resp(rpc_id, error=auth_err)

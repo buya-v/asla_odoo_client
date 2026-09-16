@@ -9,10 +9,13 @@
             <field name="tz">Asia/Ulaanbaatar</field>
         </record>
 
+        <!-- No password: this user exists so the partner is reachable in
+             Discuss, not so anyone can log in as it. This module ships to
+             public GitHub, and a constant password here would be a shared
+             credential on every deployment. -->
         <record id="user_asla_studio_bot" model="res.users">
             <field name="partner_id" ref="partner_asla_studio_bot"/>
             <field name="login">aslabot</field>
-            <field name="password">aslabot_secret</field>
             <field name="company_id" ref="base.main_company"/>
             <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
             <field name="active" eval="True"/>

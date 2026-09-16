@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_asla_app_project_system,asla_client.rfp.project.system,model_asla_app_project,base.group_system,1,1,1,1
-access_asla_app_project_user,asla_client.rfp.project.user,model_asla_app_project,base.group_user,1,1,1,1
+access_bot_ticket_user,asla_client.ticket.user,model_asla_client_ticket,group_asla_bot_user,1,1,1,0
+access_bot_ticket_admin,asla_client.ticket.admin,model_asla_client_ticket,group_asla_bot_admin,1,1,1,1
+access_bot_operation_user,asla_client.mcp.operation.user,model_asla_client_mcp_operation,group_asla_bot_user,1,0,0,0
+access_bot_operation_admin,asla_client.mcp.operation.admin,model_asla_client_mcp_operation,group_asla_bot_admin,1,1,1,1
+access_asla_app_project_system,asla_client.rfp.project.system,model_asla_client_rfp_project,base.group_system,1,1,1,1
+access_asla_app_project_user,asla_client.rfp.project.user,model_asla_client_rfp_project,base.group_user,1,1,1,1
