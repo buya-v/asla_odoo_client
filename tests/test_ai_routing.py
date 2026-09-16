@@ -58,4 +58,9 @@ class TestAiRouting(TransactionCase):
         with patch(_POST, side_effect=AssertionError('nothing may leave in this case')):
             result = self.ai.answer('How do I add a field?')
         self.assertEqual(result['via'], 'none')
-        self.assertIn('not paired', result['answer'])
+        self.assertTrue(result['degraded'])
+        self.assertTrue(result['answer'])
+        # The wording is translated, so it is checked in English explicitly:
+        # asserting on the default language fails on a Mongolian install.
+        english = self.ai.with_context(lang='en_US').answer('How do I add a field?')
+        self.assertIn('not paired', english['answer'])

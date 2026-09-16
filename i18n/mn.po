@@ -1,0 +1,1297 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* asla_odoo_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20260324\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-16 06:45+0000\n"
+"PO-Revision-Date: 2026-09-16 06:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "'%s' is not a valid Odoo module name."
+msgstr "'%s' нь Odoo модулийн зөв нэр биш байна."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "/opt/odoo/asla_generated"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "1. Upload RFP (ZIP File)"
+msgstr "1. RFP-ээ хуулна (ZIP файл)"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "<i class=\"fa fa-check-circle\"/> RFP Contents Extracted!"
+msgstr "<i class=\"fa fa-check-circle\"/> RFP-ийн агуулгыг задаллаа!"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "<i class=\"fa fa-magic\"/> Generate &amp; Download App.zip (1 Credit)"
+msgstr "<i class=\"fa fa-magic\"/> App.zip үүсгэж татах (1 кредит)"
+
+#. module: asla_odoo_client
+#: model:ir.ui.menu,name:asla_odoo_client.menu_aslabot_projects
+msgid "AI Projects"
+msgstr "AI төслүүд"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "API Key"
+msgstr "API түлхүүр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_api_key
+msgid "ASLA AI API Key"
+msgstr "ASLA AI-н API түлхүүр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_api_url
+msgid "ASLA AI Server URL"
+msgstr "ASLA AI серверийн хаяг"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_asla_client_rfp_project
+msgid "ASLA App Generation Project"
+msgstr "ASLA апп үүсгэх төсөл"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_needaction
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_needaction
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_needaction
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_exception_decoration
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_state
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_type_icon
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__category__admin
+msgid "Administration"
+msgstr "Администраци"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__prompt
+msgid "Aggregated Prompt"
+msgstr "Нэгтгэсэн промпт"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ai.py:0
+msgid ""
+"Answered without grounding: the asla_odoo_ai service is not reachable, so no"
+" corpus was consulted."
+msgstr "Үндэслэлгүйгээр хариуллаа: asla_odoo_ai үйлчилгээ холбогдохгүй байсан тул ямар ч эх сурвалж ашиглаагүй."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__state__done
+msgid "App Installed"
+msgstr "Апп суулгасан"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "App archive has %s files, which exceeds the limit."
+msgstr "Аппын архивт %s файл байна, энэ нь хязгаараас хэтэрсэн байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "App archive has no __manifest__.py."
+msgstr "Аппын архивт __manifest__.py алга байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "App archive is too large once uncompressed."
+msgstr "Аппын архив задлахад хэт том байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "App archive must contain a single module directory."
+msgstr "Аппын архив яг нэг модулийн хавтас агуулсан байх ёстой."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "App archive must contain exactly one module directory, found %s."
+msgstr "Аппын архив яг нэг модулийн хавтас агуулах ёстой боловч %s олдлоо."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Approve & Execute"
+msgstr "Зөвшөөрч гүйцэтгэх"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Arguments"
+msgstr "Аргументууд"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__arguments
+msgid "Arguments (JSON)"
+msgstr "Аргументууд (JSON)"
+
+#. module: asla_odoo_client
+#: model:ir.ui.menu,name:asla_odoo_client.menu_aslabot_root
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "AslaBot"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_asla_client_ai
+msgid "AslaBot AI Client"
+msgstr "AslaBot AI клиент"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "AslaBot AI Configuration"
+msgstr "AslaBot AI тохиргоо"
+
+#. module: asla_odoo_client
+#: model:ir.module.category,name:asla_odoo_client.module_category_asla_bot
+#: model:ir.ui.menu,name:asla_odoo_client.menu_asla_bot_root
+msgid "AslaBot Agent"
+msgstr "AslaBot агент"
+
+#. module: asla_odoo_client
+#: model:res.groups,name:asla_odoo_client.group_asla_bot_admin
+msgid "AslaBot Agent Administrator"
+msgstr "AslaBot агентын администратор"
+
+#. module: asla_odoo_client
+#: model:res.groups,name:asla_odoo_client.group_asla_bot_user
+msgid "AslaBot Agent User"
+msgstr "AslaBot агентын хэрэглэгч"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "AslaBot App Project"
+msgstr "AslaBot аппын төсөл"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_tree
+msgid "AslaBot App Projects"
+msgstr "AslaBot аппын төслүүд"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_asla_client_hub
+msgid "AslaBot Hub Connection"
+msgstr "AslaBot хабын холболт"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_asla_client_mcp_operation
+msgid "AslaBot Local Operation"
+msgstr "AslaBot локал үйлдэл"
+
+#. module: asla_odoo_client
+#: model:ir.actions.act_window,name:asla_odoo_client.action_aslabot_project
+msgid "AslaBot Projects"
+msgstr "AslaBot төслүүд"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_users__asla_bot_state
+msgid "AslaBot Status"
+msgstr "AslaBot-ын төлөв"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_asla_client_ticket
+msgid "AslaBot Ticket"
+msgstr "AslaBot хүсэлт"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_attachment_count
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_attachment_count
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_attachment_count
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__local_tier__auto_execute
+msgid "Auto Execute"
+msgstr "Автоматаар гүйцэтгэх"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__response_category__automated
+msgid "Automated"
+msgstr "Автоматжуулсан"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/mcp_execution.py:0
+msgid "Blocked by local policy (never_automate): %s"
+msgstr "Локал бодлогоор хориглосон (never_automate): %s"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__bot_token
+msgid "Bot Token"
+msgstr "Ботын токен"
+
+#. module: asla_odoo_client
+#: model:res.groups,comment:asla_odoo_client.group_asla_bot_user
+msgid "Can raise tickets and view answers."
+msgstr "Хүсэлт үүсгэж, хариуг нь харж чадна."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__category
+msgid "Category"
+msgstr "Ангилал"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__request_mode
+msgid ""
+"Changing an already-installed module is an upgrade, not an install, and the "
+"Hub verifies it differently."
+msgstr "Суулгасан модулийг өөрчлөх нь шинээр суулгах биш, шинэчлэх үйлдэл бөгөөд Хаб үүнийг өөрөөр шалгадаг."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__client_id
+msgid "Client ID"
+msgstr "Клиентийн ID"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.ui.menu,name:asla_odoo_client.menu_asla_bot_config
+#: model:ir.ui.menu,name:asla_odoo_client.menu_aslabot_config
+msgid "Configuration"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:res.groups,comment:asla_odoo_client.group_asla_bot_admin
+msgid "Configures the hub connection and approves operations."
+msgstr "Хабын холболтыг тохируулж, үйлдлүүдийг зөвшөөрнө."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__local_tier__confirm_then_execute
+msgid "Confirm Then Execute"
+msgstr "Баталгаажуулаад гүйцэтгэх"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__create_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__create_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__create_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__create_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__create_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__create_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Credits Remaining:"
+msgstr "Үлдсэн кредит:"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__category__customization
+msgid "Customization"
+msgstr "Тохируулга"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__description
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_ticket_form
+msgid "Description"
+msgstr "Тайлбар"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_res_config_settings__asla_generated_addons_path
+msgid ""
+"Directory that generated modules are extracted into. It must be on this Odoo"
+" server's --addons-path and writable by the Odoo user, otherwise an imported"
+" app cannot be installed."
+msgstr "Үүсгэсэн модулийг задлах хавтас. Энэ нь тухайн Odoo серверийн --addons-path дотор байх ба Odoo хэрэглэгч бичих эрхтэй байх ёстой, эс бөгөөс импортолсон аппыг суулгаж чадахгүй."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_users__asla_bot_state__disabled
+msgid "Disabled"
+msgstr "Идэвхгүй"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_discuss_channel
+msgid "Discussion Channel"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__display_name
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__display_name
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__display_name
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__done
+msgid "Done"
+msgstr "Дууссан"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__rfp_file
+msgid "Download RFP ZIP"
+msgstr "RFP ZIP татах"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__draft
+msgid "Draft"
+msgstr "Ноорог"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__state__draft
+msgid "Draft (Gathering Requirements)"
+msgstr "Ноорог (шаардлага цуглуулж байна)"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__enrollment_code
+msgid "Enrollment Code"
+msgstr "Бүртгэлийн код"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/hub.py:0
+msgid "Enter the enrollment code generated in the hub."
+msgstr "Хаб дээр үүсгэсэн бүртгэлийн кодоо оруулна уу."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__error_message
+msgid "Error"
+msgstr "Алдаа"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Error processing your request:"
+msgstr "Таны хүсэлтийг боловсруулахад алдаа гарлаа:"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__escalated
+msgid "Escalated"
+msgstr "Шатлан дамжуулсан"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__rfp_preview
+msgid "Exactly what will be sent to the ASLA Hub. Review before export."
+msgstr "ASLA Хаб руу яг юу илгээхийг энд харуулав. Экспортлохын өмнө шалгана уу."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__state__executed
+msgid "Executed"
+msgstr "Гүйцэтгэсэн"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__request_mode__extend_standard
+msgid "Extend a Standard Odoo Module"
+msgstr "Стандарт Odoo модулийг өргөтгөх"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__state__failed
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__failed
+msgid "Failed"
+msgstr "Амжилтгүй"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_res_config_settings__asla_ollama_url
+msgid ""
+"Fallback when asla_odoo_ai is unreachable. Answers are then ungrounded, and "
+"AslaBot says so."
+msgstr "asla_odoo_ai холбогдохгүй үед ашиглах нөөц зам. Тэр үед хариулт эх сурвалжид тулгуурлахгүй бөгөөд AslaBot үүнийг хэлнэ."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_follower_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_follower_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_follower_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_partner_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_partner_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_partner_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__activity_type_icon
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "Force Generate RFP"
+msgstr "RFP-г хүчээр үүсгэх"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_generated_addons_path
+msgid "Generated Addons Path"
+msgstr "Үүсгэсэн модулийн зам"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Generated addons path does not exist: %s"
+msgstr "Үүсгэсэн модулийн зам олдсонгүй: %s"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Generated addons path is not writable: %s"
+msgstr "Үүсгэсэн модулийн зам руу бичих эрхгүй байна: %s"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__has_message
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__has_message
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__has_message
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__prompt
+msgid "Hidden field capturing the entire chat history for the RFP"
+msgstr "RFP-д зориулж чатын түүхийг бүхэлд нь хадгалах нуугдмал талбар"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__priority__2
+msgid "High"
+msgstr "Өндөр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__hub_rpc_url
+msgid "Hub RPC URL"
+msgstr "Хабын RPC хаяг"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__hub_ref
+msgid "Hub Reference"
+msgstr "Хабын дугаар"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__hub_token
+msgid "Hub Token"
+msgstr "Хабын токен"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/hub.py:0
+msgid "Hub error %(code)s: %(msg)s"
+msgstr "Хабын алдаа %(code)s: %(msg)s"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ticket.py:0
+msgid "Hub submission pending (will retry): %s"
+msgstr "Хаб руу илгээхийг хүлээж байна (дахин оролдоно): %s"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/hub.py:0
+msgid "Hub unreachable: %s"
+msgstr "Хаб холбогдохгүй байна: %s"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__hub_tier
+msgid "Hub-proposed Tier"
+msgstr "Хабын санал болгосон түвшин"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__id
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__id
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__id
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__id
+msgid "ID"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_exception_icon
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__activity_exception_icon
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__message_needaction
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__message_needaction
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__message_needaction
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__message_has_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__message_has_sms_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__message_has_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__message_has_sms_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__message_has_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__message_has_sms_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__message_has_error
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__in_progress
+msgid "In Progress"
+msgstr "Явагдаж байна"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_users__asla_bot_state__initialized
+msgid "Initialized"
+msgstr "Эхлүүлсэн"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "Install Uploaded App"
+msgstr "Хуулсан аппыг суулгах"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__installed_module
+msgid "Installed Module"
+msgstr "Суулгасан модуль"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_is_follower
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_is_follower
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_is_follower
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__lang
+msgid "Language"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_ai_url
+msgid "Language Service URL"
+msgstr "Хэлний үйлчилгээний хаяг"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__last_heartbeat
+msgid "Last Heartbeat"
+msgstr "Сүүлийн холбоо"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__write_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__write_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__write_uid
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__write_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__write_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__write_date
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__local_tier
+msgid "Local Tier"
+msgstr "Локал түвшин"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_res_config_settings__asla_ai_url
+msgid "Local asla_odoo_ai instance, used in offline mode."
+msgstr "Офлайн горимд ашиглах локал asla_odoo_ai сервис."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__priority__0
+msgid "Low"
+msgstr "Бага"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_has_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_has_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_has_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__method
+msgid "Method"
+msgstr "Метод"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__request_mode__modify_existing
+msgid "Modify an Existing Custom Module"
+msgstr "Одоо байгаа захиалгат модулийг өөрчлөх"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Module '%s' is not installed on this database."
+msgstr "'%s' модуль энэ өгөгдлийн санд суугаагүй байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Module '%s' is not installed."
+msgstr "'%s' модуль суугаагүй байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Module <b>%s</b> has been uninstalled."
+msgstr "<b>%s</b> модулийг устгалаа."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Module <b>%s</b> was %s successfully."
+msgstr "<b>%s</b> модулийг амжилттай %s."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__target_module
+msgid "Module to Modify"
+msgstr "Өөрчлөх модуль"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__my_activity_date_deadline
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__name
+msgid "Name"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__response_category__needs_review
+msgid "Needs Review"
+msgstr "Хянах шаардлагатай"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ai.py:0
+msgid "Neither asla_odoo_ai (%(ai)s) nor Ollama (%(ol)s) is reachable."
+msgstr "asla_odoo_ai (%(ai)s) ч, Ollama (%(ol)s) ч холбогдохгүй байна."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__local_tier__never_automate
+msgid "Never Automate"
+msgstr "Хэзээ ч автоматжуулахгүй"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ticket.py:0
+msgid "New"
+msgstr "Шинэ"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__request_mode__new_module
+msgid "New Module"
+msgstr "Шинэ модуль"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_date_deadline
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_summary
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_type_id
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ticket.py:0
+msgid "No paired hub — ticket stored locally only."
+msgstr "Холбогдсон хаб алга — хүсэлтийг зөвхөн локалд хадгаллаа."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__priority__1
+msgid "Normal"
+msgstr "Энгийн"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_users__asla_bot_state__not_initialized
+msgid "Not initialized"
+msgstr "Эхлүүлээгүй"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Nothing to undo: no generated module recorded on this project."
+msgstr "Буцаах зүйл алга: энэ төсөлд үүсгэсэн модуль бүртгэгдээгүй байна."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_needaction_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_needaction_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_needaction_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_has_error_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_has_error_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_has_error_counter
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__message_needaction_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__message_needaction_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__message_needaction_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__message_has_error_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__message_has_error_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__message_has_error_counter
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid ""
+"Odoo did not pick up module '%s'. Is %s on this server's --addons-path?"
+msgstr "Odoo '%s' модулийг олж хараагүй байна. %s нь энэ серверийн --addons-path дотор байгаа юу?"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Odoo refused to %s '%s': %s"
+msgstr "Odoo '%s'-г %s хийхээс татгалзлаа: %s"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Offline App Generator"
+msgstr "Офлайн апп үүсгэгч"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__operation_mode__export_rfp
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_config_settings__asla_operation_mode__export_rfp
+msgid "Offline Mode: Export RFP (ZIP)"
+msgstr "Офлайн горим: RFP экспортлох (ZIP)"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__operation_mode__import_app
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_config_settings__asla_operation_mode__import_app
+msgid "Offline Mode: Import Generated App (ZIP)"
+msgstr "Офлайн горим: Үүсгэсэн аппыг импортлох (ZIP)"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_ollama_model
+msgid "Ollama Model"
+msgstr "Ollama загвар"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_ollama_url
+msgid "Ollama URL"
+msgstr "Ollama хаяг"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__enrollment_code
+msgid "One-time code generated in the hub to pair this bot."
+msgstr "Энэ ботыг холбохын тулд хаб дээр үүсгэсэн нэг удаагийн код."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__operation_mode__online
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__res_config_settings__asla_operation_mode__online
+msgid "Online API (Auto-Install)"
+msgstr "Онлайн API (автоматаар суулгах)"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ai.py:0
+msgid ""
+"Online mode is selected but this instance is not paired with the ASLA Hub. "
+"Pair it in Settings, or switch to offline mode."
+msgstr "Онлайн горим сонгогдсон ч энэ систем ASLA Хабтай холбогдоогүй байна. Тохиргооноос холбох эсвэл офлайн горимд шилжүүлнэ үү."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Operation"
+msgstr "Үйлдэл"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__operation_mode
+#: model:ir.model.fields,field_description:asla_odoo_client.field_res_config_settings__asla_operation_mode
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "Operation Mode"
+msgstr "Ажиллах горим"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__operation_ref
+msgid "Operation Ref"
+msgstr "Үйлдлийн дугаар"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/mcp_execution.py:0
+msgid "Operation is not awaiting confirmation."
+msgstr "Энэ үйлдэл баталгаажуулалт хүлээгээгүй байна."
+
+#. module: asla_odoo_client
+#: model:ir.actions.act_window,name:asla_odoo_client.action_asla_bot_operation
+#: model:ir.ui.menu,name:asla_odoo_client.menu_asla_bot_operations
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_list
+msgid "Operations"
+msgstr "Үйлдлүүд"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_hub__state__paired
+msgid "Paired"
+msgstr "Холбогдсон"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/hub.py:0
+msgid "Paired with hub as client %s."
+msgstr "Хабтай %s клиентээр холбогдлоо."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__state__pending_confirmation
+msgid "Pending Confirmation"
+msgstr "Баталгаажуулалт хүлээж байна"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Please upload the App ZIP file."
+msgstr "Аппын ZIP файлыг хуулна уу."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Policy"
+msgstr "Бодлого"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__priority
+msgid "Priority"
+msgstr "Ач холбогдол"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__name
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "Project Name"
+msgstr "Төслийн нэр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__protocol_version
+msgid "Protocol Version"
+msgstr "Протоколын хувилбар"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/hub.py:0
+msgid "Pushed configuration snapshot to hub."
+msgstr "Тохиргооны хуулбарыг хаб руу илгээлээ."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__rfp_preview
+msgid "RFP Contents"
+msgstr "RFP-ийн агуулга"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__rfp_file_name
+msgid "RFP File Name"
+msgstr "RFP файлын нэр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_rfp_project__state__ready
+msgid "RFP Ready for Download"
+msgstr "RFP татахад бэлэн"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__state__received
+msgid "Received"
+msgstr "Хүлээн авсан"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__name
+msgid "Reference"
+msgstr "Дугаар"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Refusing archive: it contains a symlink (%s)."
+msgstr "Архивыг татгалзлаа: доторх symlink (%s) байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Refusing archive: unexpected file type %s"
+msgstr "Архивыг татгалзлаа: %s гэсэн хүлээгээгүй төрлийн файл байна"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Refusing archive: unsafe path %s"
+msgstr "Архивыг татгалзлаа: %s зам аюултай байна"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Reject"
+msgstr "Татгалзах"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_mcp_operation__state__rejected
+msgid "Rejected"
+msgstr "Татгалзсан"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__reporter_id
+msgid "Reporter"
+msgstr "Мэдээлсэн хүн"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Request"
+msgstr "Хүсэлт"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__request_mode
+msgid "Request Type"
+msgstr "Хүсэлтийн төрөл"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__response_category__requires_consultation
+msgid "Requires Consultation"
+msgstr "Зөвлөгөө шаардлагатай"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__response_category
+msgid "Response Category"
+msgstr "Хариуны ангилал"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__activity_user_id
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__activity_user_id
+msgid "Responsible User"
+msgstr "Хариуцагч"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_ticket_form
+msgid "Resubmit to Hub"
+msgstr "Хаб руу дахин илгээх"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__result
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_operation_form
+msgid "Result"
+msgstr "Үр дүн"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Review or modify the exact payload we are sending to the AI below:"
+msgstr "AI руу илгээх өгөгдлийг доор хараад шаардлагатай бол засна уу:"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__message_has_sms_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__message_has_sms_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__message_has_sms_error
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "Select the module to modify."
+msgstr "Өөрчлөх модулиа сонгоно уу."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "Server URL"
+msgstr "Серверийн хаяг"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "Set the default operation mode for the AI Project generator."
+msgstr "AI төсөл үүсгэгчийн үндсэн ажиллах горимыг тохируулна."
+
+#. module: asla_odoo_client
+#: model:ir.actions.act_window,name:asla_odoo_client.action_aslabot_config_settings
+#: model:ir.ui.menu,name:asla_odoo_client.menu_aslabot_settings
+msgid "Settings"
+msgstr "Тохиргоо"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ticket.py:0
+msgid "Sources:"
+msgstr "Эх сурвалж:"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__state
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__state
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__state
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__state
+msgid "Status"
+msgstr "Төлөв"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__activity_state
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__subject
+msgid "Subject"
+msgstr "Гарчиг"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__submitted
+msgid "Submitted"
+msgstr "Илгээсэн"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__category__support
+msgid "Support"
+msgstr "Дэмжлэг"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid ""
+"System parameter 'asla_client.generated_addons_path' is not set. Point it at"
+" a directory that is on this server's Odoo --addons-path, otherwise a "
+"generated module cannot be installed."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__target_model
+msgid "Target Model"
+msgstr "Зорилтот модель"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__target_module
+msgid ""
+"Technical name of the installed module to change. Required when Request Type"
+" is 'Modify an Existing Custom Module'."
+msgstr "Өөрчлөх суулгасан модулийн техникийн нэр. Хүсэлтийн төрөл нь 'Одоо байгаа захиалгат модулийг өөрчлөх' үед шаардлагатай."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__installed_module
+msgid ""
+"Technical name of the module installed from the generated app, so it can be "
+"upgraded or uninstalled later."
+msgstr "Үүсгэсэн аппаас суулгасан модулийн техникийн нэр; ингэснээр дараа нь шинэчлэх, устгах боломжтой."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__client_id
+msgid "Tenant key assigned by the hub at pairing."
+msgstr "Холбогдох үед хабаас олгосон түрээслэгчийн түлхүүр."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/ai.py:0
+msgid "The ASLA Hub is not reachable: %s"
+msgstr "ASLA Хаб холбогдохгүй байна: %s"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "The app archive is empty."
+msgstr "Аппын архив хоосон байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/rfp_generator.py:0
+msgid "The uploaded file is not a valid ZIP archive."
+msgstr "Хуулсан файл зөв ZIP архив биш байна."
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/mcp_execution.py:0
+msgid "This operation cannot be automated."
+msgstr "Энэ үйлдлийг автоматжуулах боломжгүй."
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_ticket_form
+msgid "Ticket"
+msgstr "Хүсэлт"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__ticket_ref
+msgid "Ticket Ref"
+msgstr "Хүсэлтийн дугаар"
+
+#. module: asla_odoo_client
+#: model:ir.actions.act_window,name:asla_odoo_client.action_asla_bot_ticket
+#: model:ir.ui.menu,name:asla_odoo_client.menu_asla_bot_tickets
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_bot_ticket_list
+msgid "Tickets"
+msgstr "Хүсэлтүүд"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__state__triaged
+msgid "Triaged"
+msgstr "Ангилсан"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__activity_exception_decoration
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "Undo Last Generation"
+msgstr "Сүүлийн үүсгэлтийг буцаах"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/mcp_execution.py:0
+msgid "Unknown fields: %s"
+msgstr "Тодорхойгүй талбарууд: %s"
+
+#. module: asla_odoo_client
+#. odoo-python
+#: code:addons/asla_odoo_client/models/mcp_execution.py:0
+msgid "Unknown model: %s"
+msgstr "Тодорхойгүй модель: %s"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_hub__state__unpaired
+msgid "Unpaired"
+msgstr "Холбогдоогүй"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__app_upload_filename
+msgid "Upload File Name"
+msgstr "Хуулсан файлын нэр"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__app_upload_file
+msgid "Upload Generated App ZIP"
+msgstr "Үүсгэсэн аппын ZIP-ийг хуулах"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Upload the asla_rfp.zip file generated by your offline ASLA Client."
+msgstr "Офлайн ASLA клиентээрээ үүсгэсэн asla_rfp.zip файлаа хуулна уу."
+
+#. module: asla_odoo_client
+#: model:ir.model.fields.selection,name:asla_odoo_client.selection__asla_client_ticket__priority__3
+msgid "Urgent"
+msgstr "Яаралтай"
+
+#. module: asla_odoo_client
+#: model:ir.model,name:asla_odoo_client.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "Usually https://odoo.asla.mn/api/v1/generate_odoo_app"
+msgstr "Ихэвчлэн https://odoo.asla.mn/api/v1/generate_odoo_app"
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_hub__website_message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_mcp_operation__website_message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_rfp_project__website_message_ids
+#: model:ir.model.fields,field_description:asla_odoo_client.field_asla_client_ticket__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__website_message_ids
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_mcp_operation__website_message_ids
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_rfp_project__website_message_ids
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_ticket__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.portal_my_ai
+msgid "Your API Key:"
+msgstr "Таны API түлхүүр:"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.res_config_settings_view_form
+msgid "Your ASLA API Key from odoo.asla.mn"
+msgstr "odoo.asla.mn дээрх таны ASLA API түлхүүр"
+
+#. module: asla_odoo_client
+#: model_terms:ir.ui.view,arch_db:asla_odoo_client.view_asla_app_project_form
+msgid "e.g. Fleet Tracker App"
+msgstr ""
+
+#. module: asla_odoo_client
+#: model:ir.model.fields,help:asla_odoo_client.field_asla_client_hub__hub_rpc_url
+msgid "e.g. https://odoo.asla.mn/asla/hub/rpc"
+msgstr ""
