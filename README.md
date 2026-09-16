@@ -45,8 +45,12 @@ Reads run automatically. Writes are planned, dry-run and approved by a person. `
 
 ```bash
 git clone https://github.com/buya-v/asla_odoo_client.git
-# put it on your addons path, then restart Odoo
+# add the repository itself to --addons-path (it contains the module folder),
+# then restart Odoo
 ```
+
+The repository holds one folder, `asla_odoo_client/`, which is the module. Point Odoo's
+`--addons-path` at the **repository**, not at the folder inside it.
 
 Update the apps list, install **ASLA Client Agent**, then open
 **AslaBot → Configuration → Settings**:
