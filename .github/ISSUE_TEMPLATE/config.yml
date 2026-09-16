@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/buya-v/asla_odoo_client/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.
+  - name: Questions about the hosted service, prices or credits
+    url: https://odoo.asla.mn/contactus
+    about: For anything about the ASLA Hub rather than this module.

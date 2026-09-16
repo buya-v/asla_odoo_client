@@ -5,7 +5,7 @@ class ResConfigSettings(models.TransientModel):
 
     asla_api_key = fields.Char(string='ASLA AI API Key', config_parameter='asla_studio.api_key')
     asla_api_url = fields.Char(string='ASLA AI Server URL', config_parameter='asla_studio.api_url', default='https://odoo.asla.mn/api/v1/generate_odoo_app')
-    
+
     # Where a generated module is written before it is installed. Must be on
     # this server's --addons-path, or Odoo will never see the module.
     asla_generated_addons_path = fields.Char(

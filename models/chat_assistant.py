@@ -13,14 +13,13 @@ The AI call itself moved to `asla_client.ai`, which routes offline/online and
 is shared with the RFP flow.
 """
 import html
-import json
 import logging
 import re
 import threading
 
 from markupsafe import Markup
 
-from odoo import api, models
+from odoo import models
 
 _logger = logging.getLogger(__name__)
 

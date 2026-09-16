@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Root Menu -->
-    <menuitem id="menu_asla_studio_root" name="AslaBot" web_icon="asla_studio,static/description/icon.png" sequence="10"/>
+    <menuitem id="menu_asla_studio_root" name="AslaBot" web_icon="asla_odoo_client,static/description/icon.png" sequence="10"/>
 
     <!-- Action Menus -->
     <menuitem id="menu_asla_studio_generate" name="AI Projects" parent="menu_asla_studio_root" action="action_asla_studio_project" sequence="10"/>
