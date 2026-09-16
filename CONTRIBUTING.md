@@ -6,7 +6,8 @@ so the bar for changes is "could I explain this to the DBA whose database it tou
 ## Running it locally
 
 1. Odoo 18 on your own machine, self-hosted (Odoo Online cannot install custom modules).
-2. Clone this repository into your addons path and restart Odoo.
+2. Clone this repository and add **the repository directory** to Odoo's `--addons-path`
+   (it contains one folder, `asla_odoo_client/`, which is the module), then restart Odoo.
 3. Update the apps list and install **ASLA Client Agent**.
 4. Open **AslaBot → Configuration → Settings**. Offline mode is the default and needs no account.
 
