@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    # 18.0 is the default branch: the Apps Store registers a repository by the
+    # branch named for the series, so development happens there, not on main.
+    branches: [18.0]
   pull_request:
 
 jobs:
