@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest something the agent should do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem you are solving
+      description: What are you trying to do that is hard today?
+    validations: {required: true}
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you would like it to do
+    validations: {required: true}
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data boundaries
+      options:
+        - label: This can be done without sending customer records out of the network
+        - label: This would need a person to approve any change to data

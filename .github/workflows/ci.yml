@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  install-and-test:
+    name: Install into Odoo 18 and run the tests
+    runs-on: ubuntu-latest
+    container: odoo:18.0
+
+    services:
+      db:
+        image: postgres:16
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U odoo"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: addons/asla_odoo_client
+
+      - name: Install the module and run its tests
+        run: |
+          odoo \
+            --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
+            --db_host=db --db_user=odoo --db_password=odoo \
+            -d ci --data-dir=/tmp/odoo-data --without-demo=all \
+            -i asla_odoo_client --test-enable --test-tags /asla_odoo_client \
+            --stop-after-init --workers=0 --max-cron-threads=0 --log-level=warn \
+            2>&1 | tee odoo.log
+          # Odoo exits 0 even when tests fail, so the log is the verdict.
+          grep -qE "0 failed, 0 error\(s\)" odoo.log || { echo "::error::tests failed"; exit 1; }
+          grep -qE "FAIL:|ERROR:" odoo.log && { echo "::error::failures in the log"; exit 1; }
+          echo "tests passed"
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install ruff
+      - run: ruff check .

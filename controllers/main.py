@@ -1,3 +1,4 @@
+import hmac
 import json
 import logging
 
@@ -24,11 +25,21 @@ class AslaBotRpc(http.Controller):
     auth='none': this is a machine endpoint with token auth, not an Odoo session.
     """
 
+    # An unauthenticated caller can reach this endpoint, so the body is capped
+    # before it is parsed: json.loads on an arbitrary upload is a free denial of
+    # service against the customer's own Odoo.
+    MAX_BODY = 1024 * 1024
+
     @http.route('/asla/bot/rpc', type='http', auth='none', methods=['POST'], csrf=False)
     def rpc(self, **_kw):
+        body = request.httprequest.get_data()
+        if len(body) > self.MAX_BODY:
+            return self._resp(None, error=(ERR_INTERNAL, 'Request too large'))
         try:
-            req = json.loads(request.httprequest.get_data() or b'{}')
+            req = json.loads(body or b'{}')
         except ValueError:
+            return self._resp(None, error=(ERR_INTERNAL, 'Invalid JSON'))
+        if not isinstance(req, dict):
             return self._resp(None, error=(ERR_INTERNAL, 'Invalid JSON'))
 
         rpc_id = req.get('id')
@@ -45,10 +56,12 @@ class AslaBotRpc(http.Controller):
         except _RpcError as exc:
             request.env.cr.rollback()  # don't persist partial work on failure
             return self._resp(rpc_id, error=(exc.code, exc.message))
-        except Exception as exc:
+        except Exception:
             request.env.cr.rollback()
+            # The detail goes to this Odoo's log, not to the caller: paths, SQL
+            # and field names are not the hub's business, let alone a stranger's.
             _logger.exception('bot rpc %s failed', method)
-            return self._resp(rpc_id, error=(ERR_INTERNAL, str(exc)))
+            return self._resp(rpc_id, error=(ERR_INTERNAL, 'Internal error; see the server log'))
         return self._resp(rpc_id, result=result)
 
     # --- auth & dispatch -------------------------------------------------------
@@ -58,7 +71,10 @@ class AslaBotRpc(http.Controller):
             return (ERR_UNAUTHORIZED, 'Bot not paired')
         header = request.httprequest.headers.get('Authorization', '')
         token = header[7:] if header.startswith('Bearer ') else ''
-        if not token or token != hub.sudo().hub_token:
+        # compare_digest, not ==: the comparison time of == leaks how much of the
+        # token is right, one character at a time.
+        expected = hub.sudo().hub_token or ''
+        if not token or not expected or not hmac.compare_digest(token, expected):
             return (ERR_UNAUTHORIZED, 'Bad or missing token')
         if params.get('client_id') and params['client_id'] != hub.client_id:
             return (ERR_UNKNOWN_CLIENT, 'client_id mismatch')

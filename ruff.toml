@@ -1,0 +1,14 @@
+# Deliberately small: this is an Odoo module, and Odoo's own conventions
+# (star-free imports, long QWeb strings, api decorators) fight most rule sets.
+line-length = 110
+target-version = "py312"
+
+[lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4"]
+ignore = [
+    "E501",  # long lines exist in data strings and prompts
+    "B008",  # Odoo fields are called in defaults
+]
+
+[lint.per-file-ignores]
+"__manifest__.py" = ["ALL"]
