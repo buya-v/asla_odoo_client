@@ -5,6 +5,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+- The retired `asla_studio` naming is gone: eight xmlids (the bot partner and user, four menus, two
+  actions) and the settings keys `asla_studio.api_key`, `asla_studio.api_url` and
+  `asla_studio.operation_mode` are now `asla_client.*`. A pre-migration renames the existing
+  `ir_model_data` rows in place, so a database keeps its records instead of gaining a second bot
+  partner and duplicate menus, and a post-migration copies the settings. The old keys are still read
+  as a fallback for one release.
+
+### Fixed
+- `asla_client.mcp.plan.action_validate_dry_run` wrote "Schema validation passed" without inspecting
+  anything, and `action_execute` wrote `state = 'executed'` without executing anything. Both now
+  refuse: an approval granted on the strength of a dry run that never ran is worse than no dry run.
+
 ### Security
 - `/asla/bot/rpc` compares the bearer token in constant time (`hmac.compare_digest`) instead
   of `==`, which leaked how much of a guess was correct.

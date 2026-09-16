@@ -1,6 +1,6 @@
 {
     'name': 'ASLA Client Agent',
-    'version': '18.0.1.1.0',
+    'version': '18.0.1.2.0',
     'summary': 'AI agent inside your own Odoo: answers, support tickets and module requests',
     'description': """
 ASLA Client Agent
@@ -31,7 +31,7 @@ Licence: LGPL-3. Documentation: https://odoo.asla.mn/client
         'security/asla_bot_groups.xml',
         'security/ir.model.access.csv',
         'data/asla_bot_data.xml',
-        'data/asla_studio_bot_data.xml',
+        'data/aslabot_data.xml',
         'data/ir_sequence_data.xml',
         'views/asla_project_views.xml',
         'views/bot_operation_views.xml',

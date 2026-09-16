@@ -19,7 +19,7 @@ from odoo import fields, models
 
 _logger = logging.getLogger(__name__)
 
-BOT_XMLID = 'asla_odoo_client.partner_asla_studio_bot'
+BOT_XMLID = 'asla_odoo_client.partner_aslabot'
 
 
 class ResUsers(models.Model):
